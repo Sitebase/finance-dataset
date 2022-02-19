@@ -1,0 +1,5 @@
+type = "webpack"
+name = "my-finance-worker"
+account_id = "899f797c564916bdced7f71a8e37d18b"
+workers_dev = true
+webpack_config = "webpack.config.js"
