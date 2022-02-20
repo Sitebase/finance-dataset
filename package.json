@@ -12,11 +12,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@cloudflare/wrangler": "^1.19.8",
     "coinlist": "^3.1.2",
     "json2csv": "^5.0.6",
-    "webpack": "^5.69.1",
-    "webpack-cli": "^4.9.2",
     "yahoo-finance2": "^2.1.4"
   }
 }
