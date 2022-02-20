@@ -1,4 +1,6 @@
-const coins = require('coinlist');
+const coins = require('coinlist')// import syntax (recommended)
+//const yahooFinance = require('yahoo-finance2').default; // NOTE the .default
+
 
 addEventListener("fetch", (event) => {
   event.respondWith(
@@ -25,6 +27,13 @@ async function handleRequest(request) {
 
   if (pathname.startsWith("/crypto/coins")) {
     return new Response(JSON.stringify(coins), {
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
+  if (pathname.startsWith("/price/test")) {
+    //const results = await yahooFinance.search('AAPL');
+    return new Response(JSON.stringify(result), {
       headers: { "Content-Type": "application/json" },
     });
   }

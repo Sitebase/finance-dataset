@@ -2,7 +2,7 @@
   "name": "finance-api",
   "version": "1.0.0",
   "description": "API for stocks and financial data",
-  "main": "./src/index.cjs",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +12,10 @@
     "@cloudflare/wrangler": "^1.19.8",
     "coinlist": "^3.1.2",
     "webpack": "^5.69.1",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "yahoo-finance2": "^2.1.4"
+  },
+  "dependencies": {
+    "yahoo-finance": "^0.3.7"
   }
 }
