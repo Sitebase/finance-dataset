@@ -9,20 +9,25 @@ function sleep(ms) {
   });
 }
 
+process.on('uncaughtException', function(err) {
+    // Handle the error safely
+    console.log(err)
+})
+
 //console.log(coins.length);
 //const top = coins.slice(0, 1000);
 
 //console.log('batches', top);
 console.log('----------------');
 let results = [];
-const batchSize = 500;
+const batchSize = 1000;
 for(let i=0; i < Math.ceil(coins.length/batchSize); i++) {
     const start = i * batchSize;
     const end = start + batchSize;
     const batch = coins.slice(start, end);
     const data = await getQuotes(batch);
-    console.log(data);
-    console.log('----', data.length);
+    //console.log(data);
+    //console.log('----', data.length);
     results = results.concat(data);
 
     await sleep(1000);
