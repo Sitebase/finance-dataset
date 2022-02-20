@@ -4,5 +4,8 @@ You use these datasets for all sort of financial projects.
 
 I personally use it for my custom stock and cryptocurreny portfolio.
 
-## Source
+## Datasets
+* Crypto coins [CSV](./artifacts/crypto.csv) [JSON](.artifacts/crypto.json)
+
+## Sources
 * Yahoo Finance
