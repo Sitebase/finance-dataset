@@ -15,7 +15,12 @@ jobs:
         with:
           node-version: '17.5'
       - run: npm install
-      - run: npm run generate
+      - name: Generate Currencies list
+        run: npm run currencies
+      - name: Generate Crypto symbols list
+        run: npm run symbols
+      - name: Generate Crypto pricing list
+        run: npm run generate
       - name: Generate regular CSV versions
         run: npm run csv
       - name: Generate light CSV versions
