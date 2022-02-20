@@ -10,3 +10,8 @@ I personally use it for my custom stock and cryptocurreny portfolio.
 
 ## Sources
 * Yahoo Finance
+
+## To do
+fetch all stock symbols form exchange websites
+https://www.tsx.com/json/company-directory/search/tsx/%5E*
+https://live.euronext.com/en/markets/amsterdam/equities/list
