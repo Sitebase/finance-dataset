@@ -56,4 +56,5 @@ const data = {
     date: new Date().toISOString(),
     coins: results
 }
-await fs.appendFile('artifacts/crypto.json', JSON.stringify(results, null, 2));
+
+await fs.writeFile('artifacts/crypto.json', JSON.stringify(results, null, 2));
