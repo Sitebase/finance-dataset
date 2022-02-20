@@ -5,6 +5,7 @@
   "main": "./src/index.js",
   "type": "module",
   "scripts": {
+    "currencies": "node scripts/currencies.js",
     "symbols": "node scripts/crypto-list.js",
     "generate": "node scripts/prices.js",
     "csv": "./node_modules/.bin/json2csv -i artifacts/crypto.json -o artifacts/crypto.csv",
