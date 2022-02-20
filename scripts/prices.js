@@ -9,13 +9,13 @@ function sleep(ms) {
   });
 }
 
-console.log(coins.length);
-const top = coins.slice(0, 14);
+//console.log(coins.length);
+//const top = coins.slice(0, 1000);
 
-console.log('batches', top);
+//console.log('batches', top);
 console.log('----------------');
 let results = [];
-const batchSize = 1000;
+const batchSize = 500;
 for(let i=0; i < Math.ceil(coins.length/batchSize); i++) {
     const start = i * batchSize;
     const end = start + batchSize;
@@ -34,27 +34,53 @@ async function getQuotes(c) {
         const quote = `${coin.symbol}-USD`;
 
         let result = null;
-        try {
-            result = await yahooFinance.quoteCombine(quote);
-        } catch(err) {
+		try {
+            result = await yahooFinance.quote(quote);
+		} catch(err) {
+			if (!err.result) {
+				//console.log('err', err);
+				return {
+					status: 'fail',
+					...coin
+				};
+			}
+			result = err.result[0];
+			//console.log('ERR validation', result.regularMarketPrice);
 
-            if (!err.result)
-                console.log('err', err);
-            result = err.result[0];
-        }
+			if (!result) {
+				//console.log('err', err);
+				return {
+					status: 'fail',
+					...coin
+				};
+			}
 
-        return {
-            ...result,
-            ...coin
-        };
+			return {
+				...result,
+				...coin
+			};
+		}
+
+		if (!result) {
+			console.error('Unable to fetch', quote);
+			return null;
+		}
+
+		return {
+			...result,
+			...coin
+		};
+
 
     }));
     return data;
 }
 
-const data = {
-    date: new Date().toISOString(),
-    coins: results
-}
+//console.log('TESTER', results.filter(v => v != undefined));
+//const data = {
+    //date: new Date().toISOString(),
+    //coins: results.filter(v => v != undefined)
+//}
 
-await fs.writeFile('artifacts/crypto.json', JSON.stringify(results, null, 2));
+
+await fs.writeFile('artifacts/crypto.json', JSON.stringify(results.filter(v => v && v.hasOwnProperty('regularMarketPrice')), null, 2));
