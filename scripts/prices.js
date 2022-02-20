@@ -1,6 +1,6 @@
 import yahooFinance from 'yahoo-finance2'; // NOTE the .default
-import coins from 'coinlist';
 import { promises as fs } from 'fs';
+import coins from './../artifacts/crypto-symbols.json' assert { type: 'json' };
 
 yahooFinance.setGlobalConfig({ validation: { logErrors: false} });
 function sleep(ms) {
@@ -15,7 +15,7 @@ process.on('uncaughtException', function(err) {
 })
 
 //console.log(coins.length);
-//const top = coins.slice(0, 1000);
+//const top = coins.slice(0, 10);
 
 //console.log('batches', top);
 console.log('----------------');
@@ -36,7 +36,7 @@ for(let i=0; i < Math.ceil(coins.length/batchSize); i++) {
 async function getQuotes(c) {
     const data = await Promise.all(c.map(async (coin) => {
 
-        const quote = `${coin.symbol}-USD`;
+        const quote = `${coin}-USD`;
 
         let result = null;
 		try {
@@ -46,7 +46,7 @@ async function getQuotes(c) {
 				//console.log('err', err);
 				return {
 					status: 'fail',
-					...coin
+					symbol: coin
 				};
 			}
 			result = err.result[0];
@@ -56,13 +56,13 @@ async function getQuotes(c) {
 				//console.log('err', err);
 				return {
 					status: 'fail',
-					...coin
+					symbol: coin
 				};
 			}
 
 			return {
 				...result,
-				...coin
+				symbol: coin
 			};
 		}
 
@@ -73,7 +73,7 @@ async function getQuotes(c) {
 
 		return {
 			...result,
-			...coin
+			symbol: coin
 		};
 
 
@@ -88,4 +88,4 @@ async function getQuotes(c) {
 //}
 
 
-await fs.writeFile('artifacts/crypto.json', JSON.stringify(results.filter(v => v && v.hasOwnProperty('regularMarketPrice')), null, 2));
+await fs.writeFile('artifacts/crypto.json', JSON.stringify(results.filter(v => v && v.hasOwnProperty('regularMarketPrice')), null, 2), { flag: 'w+' });

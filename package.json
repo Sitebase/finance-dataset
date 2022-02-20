@@ -5,6 +5,7 @@
   "main": "./src/index.js",
   "type": "module",
   "scripts": {
+    "symbols": "node scripts/crypto-list.js",
     "generate": "node scripts/prices.js",
     "csv": "./node_modules/.bin/json2csv -i artifacts/crypto.json -o artifacts/crypto.csv",
     "csv-light": "./node_modules/.bin/json2csv -i artifacts/crypto.json -f currency,symbol,name,shortName,regularMarketPrice,marketCap,circulatingSupply -o artifacts/crypto-light.csv",
@@ -13,8 +14,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "coinlist": "^3.1.2",
     "json2csv": "^5.0.6",
     "yahoo-finance2": "^2.1.4"
+  },
+  "dependencies": {
+    "node-fetch": "^3.2.0"
   }
 }
