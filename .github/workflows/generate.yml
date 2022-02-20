@@ -18,6 +18,7 @@ jobs:
       - run: npm run generate
       - name: Generate CSV versions
         run: npm run csv
+        run: npm run csv-light
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Commit generated data files
