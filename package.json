@@ -9,6 +9,7 @@
     "symbols": "node scripts/crypto-list.js",
     "generate": "node scripts/prices.js",
     "csv": "./node_modules/.bin/json2csv -i artifacts/crypto.json -o artifacts/crypto.csv",
+    "csv-currencies": "./node_modules/.bin/json2csv -i artifacts/currencies.json -o artifacts/currencies.csv",
     "csv-light": "./node_modules/.bin/json2csv -i artifacts/crypto.json -f currency,symbol,shortName,regularMarketPrice,marketCap,circulatingSupply -o artifacts/crypto-light.csv",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

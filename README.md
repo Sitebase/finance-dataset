@@ -7,6 +7,7 @@ I personally use it for my custom stock and cryptocurreny portfolio.
 ## Datasets
 * Crypto coins [CSV](./artifacts/crypto.csv) [JSON](.artifacts/crypto.json)
 * Crypto Symbols [JSON](.artifacts/crypto-symbols.json)
+* Currencies in USD [CSV](.artifacts/currencies.csv) [JSON](.artifacts/currencies.json)
 
 ## Sources
 * Yahoo Finance
