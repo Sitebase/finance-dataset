@@ -17,6 +17,7 @@ async function safeQuote(quote) {
 
 const eur = await safeQuote('EURUSD=X');
 const silver = await safeQuote('SI=F');
+const platinum = await safeQuote('PL=F');
 const gold = await safeQuote('GC=F');
 const btc = await safeQuote('BTC-USD');
 const jpy = await safeQuote('JPYUSD=X');
@@ -26,6 +27,7 @@ const chf = await safeQuote('CHFUSD=X');
 const data = {
     eur: eur.regularMarketPrice,
     silver: silver.regularMarketPrice,
+    platinum: platinum.regularMarketPrice,
     gold: gold.regularMarketPrice,
     btc: btc.regularMarketPrice,
     jpy: jpy.regularMarketPrice,

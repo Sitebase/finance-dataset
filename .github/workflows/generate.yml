@@ -19,6 +19,8 @@ jobs:
       - run: npm install
       - name: Generate Currencies list
         run: npm run currencies
+      - name: Generate Stocks list
+        run: npm run stocks
       - name: Generate Crypto symbols list
         run: npm run symbols
       - name: Generate Crypto pricing list
