@@ -8,7 +8,7 @@ I personally use it for my custom stock and cryptocurreny portfolio.
 * Crypto coins [CSV](./artifacts/crypto.csv) [JSON](.artifacts/crypto.json)
 * Crypto Symbols [JSON](./artifacts/crypto-symbols.json)
 * Currencies in USD [CSV](./artifacts/currencies.csv) [JSON](./artifacts/currencies.json)
-* Stocks [JSON](./artifacts/stocks.json)
+* Stocks [CSV](./artifacts/stocks.csv) [JSON](./artifacts/stocks.json)
 
 ## Sources
 * Yahoo Finance
