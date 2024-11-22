@@ -15,6 +15,10 @@ async function safeQuote(quote) {
     }
 }
 
+function roundTo(n, decimalPlaces) {
+  return +(+(Math.round((n + 'e+' + decimalPlaces)) + 'e-' + decimalPlaces)).toFixed(decimalPlaces);
+}
+
 const eur = await safeQuote('EURUSD=X');
 const silver = await safeQuote('SI=F');
 const platinum = await safeQuote('PL=F');
@@ -25,7 +29,7 @@ const gbp = await safeQuote('GBPUSD=X');
 const chf = await safeQuote('CHFUSD=X');
 
 const data = {
-    eur: eur.regularMarketPrice,
+    eur: roundTo(eur.regularMarketPrice, 2),
     silver: silver.regularMarketPrice,
     platinum: platinum.regularMarketPrice,
     gold: gold.regularMarketPrice,
