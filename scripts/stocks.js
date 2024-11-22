@@ -23,8 +23,8 @@ const iwda = await safeQuote('IWDA.AS');
 const susw = await safeQuote('SUSW.L');
 
 const data = {
-    iwda: roundto(iwda.regularMarketPrice, 2),
-    susw: roundto(susw.regularMarketPrice, 2),
+    iwda: roundTo(iwda.regularMarketPrice, 2),
+    susw: roundTo(susw.regularMarketPrice, 2),
     created: new Date().toISOString()
 }
 
