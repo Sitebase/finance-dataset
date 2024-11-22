@@ -21,10 +21,18 @@ function roundTo(n, decimalPlaces) {
 
 const iwda = await safeQuote('IWDA.AS');
 const susw = await safeQuote('SUSW.L');
+const net = await safeQuote('NET');
+const shop = await safeQuote('SHOP');
+const spot = await safeQuote('SPOT');
+const nflx = await safeQuote('NFLX');
 
 const data = {
     iwda: roundTo(iwda.regularMarketPrice, 2),
     susw: roundTo(susw.regularMarketPrice, 2),
+    net: roundTo(net.regularMarketPrice, 2),
+    shop: roundTo(shop.regularMarketPrice, 2),
+    spot: roundTo(spot.regularMarketPrice, 2),
+    nflx: roundTo(nflx.regularMarketPrice, 2),
     created: new Date().toISOString()
 }
 
