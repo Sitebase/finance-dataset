@@ -30,14 +30,14 @@ const chf = await safeQuote('CHFUSD=X');
 
 const data = {
     eur: roundTo(eur.regularMarketPrice, 2),
-    silver: silver.regularMarketPrice,
-    platinum: platinum.regularMarketPrice,
-    gold: gold.regularMarketPrice,
-    btc: btc.regularMarketPrice,
-    jpy: jpy.regularMarketPrice,
-    gbp: gbp.regularMarketPrice,
-    chf: chf.regularMarketPrice,
-    btc: btc.regularMarketPrice,
+    silver: roundTo(silver.regularMarketPrice, 2),
+    platinum: roundTo(platinum.regularMarketPrice, 2),
+    gold: roundTo(gold.regularMarketPrice, 2),
+    btc: roundTo(btc.regularMarketPrice, 2),
+    jpy: roundTo(jpy.regularMarketPrice, 2),
+    gbp: roundTo(gbp.regularMarketPrice, 2),
+    chf: roundTo(chf.regularMarketPrice, 2),
+    btc: roundTo(btc.regularMarketPrice, 2),
     created: new Date().toISOString()
 }
 

@@ -15,12 +15,16 @@ async function safeQuote(quote) {
     }
 }
 
+function roundTo(n, decimalPlaces) {
+  return +(+(Math.round((n + 'e+' + decimalPlaces)) + 'e-' + decimalPlaces)).toFixed(decimalPlaces);
+}
+
 const iwda = await safeQuote('IWDA.AS');
 const susw = await safeQuote('SUSW.L');
 
 const data = {
-    iwda: iwda.regularMarketPrice,
-    susw: susw.regularMarketPrice,
+    iwda: roundto(iwda.regularMarketPrice, 2),
+    susw: roundto(susw.regularMarketPrice, 2),
     created: new Date().toISOString()
 }
 
