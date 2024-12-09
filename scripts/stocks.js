@@ -25,6 +25,7 @@ const net = await safeQuote('NET');
 const shop = await safeQuote('SHOP');
 const spot = await safeQuote('SPOT');
 const nflx = await safeQuote('NFLX');
+const prx = await safeQuote('PRX.AS');
 
 const data = {
     iwda: roundTo(iwda.regularMarketPrice, 2),
@@ -33,6 +34,7 @@ const data = {
     shop: roundTo(shop.regularMarketPrice, 2),
     spot: roundTo(spot.regularMarketPrice, 2),
     nflx: roundTo(nflx.regularMarketPrice, 2),
+    prx: roundTo(prx.regularMarketPrice, 2),
     created: new Date().toISOString()
 }
 
