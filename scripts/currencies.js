@@ -24,6 +24,7 @@ const silver = await safeQuote('SI=F');
 const platinum = await safeQuote('PL=F');
 const gold = await safeQuote('GC=F');
 const btc = await safeQuote('BTC-USD');
+const eth = await safeQuote('ETH-USD');
 const jpy = await safeQuote('JPYUSD=X');
 const gbp = await safeQuote('GBPUSD=X');
 const chf = await safeQuote('CHFUSD=X');
@@ -34,6 +35,7 @@ const data = {
     platinum: roundTo(platinum.regularMarketPrice, 2),
     gold: roundTo(gold.regularMarketPrice, 2),
     btc: roundTo(btc.regularMarketPrice, 2),
+    eth: roundTo(eth.regularMarketPrice, 2),
     jpy: roundTo(jpy.regularMarketPrice, 2),
     gbp: roundTo(gbp.regularMarketPrice, 2),
     chf: roundTo(chf.regularMarketPrice, 2),
