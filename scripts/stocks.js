@@ -1,11 +1,11 @@
-import yahooFinance from 'yahoo-finance2'; // NOTE the .default
+import YahooFinance from 'yahoo-finance2';
 import { promises as fs } from 'fs';
 
-yahooFinance.setGlobalConfig({ validation: { logErrors: false} });
+const yahooFinance = new YahooFinance({ validation: { logErrors: false} });
 
 async function safeQuote(quote) {
     try {
-        const res = await yahooFinance.quoteCombine(quote);
+        const res = await yahooFinance.quote(quote);
         return res;
     } catch(err) {
         if (err.result)
