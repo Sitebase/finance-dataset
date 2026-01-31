@@ -2,7 +2,7 @@ import YahooFinance from 'yahoo-finance2';
 import { promises as fs } from 'fs';
 import coins from './../artifacts/crypto-symbols.json' assert { type: 'json' };
 
-const yahooFinance = new YahooFinance({ validation: { logErrors: false} });
+const yahooFinance = new YahooFinance({ validation: { logErrors: false } });
 function sleep(ms) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);

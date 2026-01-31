@@ -1,7 +1,7 @@
 import YahooFinance from 'yahoo-finance2';
 import { promises as fs } from 'fs';
 
-const yahooFinance = new YahooFinance({ validation: { logErrors: false} });
+const yahooFinance = new YahooFinance({ validation: { logErrors: false } });
 
 async function safeQuote(quote) {
     try {
