@@ -1,44 +1,30 @@
-import yahooFinance from 'yahoo-finance2'; // NOTE the .default
+import YahooFinance from 'yahoo-finance2';
 import { promises as fs } from 'fs';
 
-yahooFinance.setGlobalConfig({ validation: { logErrors: false} });
-
-async function safeQuote(quote) {
-    try {
-        const res = await yahooFinance.quoteCombine(quote);
-        return res;
-    } catch(err) {
-        if (err.result)
-            return err.result[0];
-
-        console.log('err', err);
-    }
-}
+const yahooFinance = new YahooFinance();
 
 function roundTo(n, decimalPlaces) {
-  return +(+(Math.round((n + 'e+' + decimalPlaces)) + 'e-' + decimalPlaces)).toFixed(decimalPlaces);
+    return +(+(Math.round((n + 'e+' + decimalPlaces)) + 'e-' + decimalPlaces)).toFixed(decimalPlaces);
 }
 
-const iwda = await safeQuote('IWDA.AS');
-const susw = await safeQuote('SUSW.L');
-const net = await safeQuote('NET');
-const shop = await safeQuote('SHOP');
-const spot = await safeQuote('SPOT');
-const nflx = await safeQuote('NFLX');
-const prx = await safeQuote('PRX.AS');
-const baba = await safeQuote('BABA');
-const crwd = await safeQuote('CRWD');
+const symbols = ['IWDA.AS', 'SUSW.L', 'NET', 'SHOP', 'SPOT', 'NFLX', 'PRX.AS', 'BABA', 'CRWD'];
+const results = await yahooFinance.quote(symbols);
+
+const priceMap = {};
+for (const quote of results) {
+    priceMap[quote.symbol] = quote.regularMarketPrice;
+}
 
 const data = {
-    iwda: roundTo(iwda.regularMarketPrice, 2),
-    susw: roundTo(susw.regularMarketPrice, 2),
-    net: roundTo(net.regularMarketPrice, 2),
-    shop: roundTo(shop.regularMarketPrice, 2),
-    spot: roundTo(spot.regularMarketPrice, 2),
-    nflx: roundTo(nflx.regularMarketPrice, 2),
-    prx: roundTo(prx.regularMarketPrice, 2),
-    baba: roundTo(baba.regularMarketPrice, 2),
-    crwd: roundTo(crwd.regularMarketPrice, 2),
+    iwda: roundTo(priceMap['IWDA.AS'], 2),
+    susw: roundTo(priceMap['SUSW.L'], 2),
+    net: roundTo(priceMap['NET'], 2),
+    shop: roundTo(priceMap['SHOP'], 2),
+    spot: roundTo(priceMap['SPOT'], 2),
+    nflx: roundTo(priceMap['NFLX'], 2),
+    prx: roundTo(priceMap['PRX.AS'], 2),
+    baba: roundTo(priceMap['BABA'], 2),
+    crwd: roundTo(priceMap['CRWD'], 2),
     created: new Date().toISOString()
 }
 

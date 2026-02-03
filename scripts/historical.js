@@ -1,4 +1,6 @@
-import yahooFinance from 'yahoo-finance2';
+import YahooFinance from 'yahoo-finance2';
+
+const yahooFinance = new YahooFinance();
 
 const query = 'TSLA';
 const queryOptions = { period1: '2022-02-15T02:00:00.000Z'};

@@ -1,45 +1,43 @@
-import yahooFinance from 'yahoo-finance2'; // NOTE the .default
+import YahooFinance from 'yahoo-finance2';
 import { promises as fs } from 'fs';
 
-yahooFinance.setGlobalConfig({ validation: { logErrors: false} });
+const yahooFinance = new YahooFinance();
 
-async function safeQuote(quote) {
-    try {
-        const res = await yahooFinance.quoteCombine(quote);
-        return res;
-    } catch(err) {
-        if (err.result)
-            return err.result[0];
+function roundTo(n, decimalPlaces) {
+    return +(+(Math.round((n + 'e+' + decimalPlaces)) + 'e-' + decimalPlaces)).toFixed(decimalPlaces);
+}
 
-        console.log('err', err);
+async function fetchWithRetry(symbols, maxRetries = 3) {
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+        try {
+            return await yahooFinance.quote(symbols);
+        } catch (err) {
+            if (attempt === maxRetries) throw err;
+            const delay = attempt * 2000;
+            console.log(`Attempt ${attempt} failed, retrying in ${delay}ms...`);
+            await new Promise(r => setTimeout(r, delay));
+        }
     }
 }
 
-function roundTo(n, decimalPlaces) {
-  return +(+(Math.round((n + 'e+' + decimalPlaces)) + 'e-' + decimalPlaces)).toFixed(decimalPlaces);
+const symbols = ['EURUSD=X', 'SI=F', 'PL=F', 'GC=F', 'BTC-USD', 'ETH-USD', 'JPYUSD=X', 'GBPUSD=X', 'CHFUSD=X'];
+const results = await fetchWithRetry(symbols);
+
+const priceMap = {};
+for (const quote of results) {
+    priceMap[quote.symbol] = quote.regularMarketPrice;
 }
 
-const eur = await safeQuote('EURUSD=X');
-const silver = await safeQuote('SI=F');
-const platinum = await safeQuote('PL=F');
-const gold = await safeQuote('GC=F');
-const btc = await safeQuote('BTC-USD');
-const eth = await safeQuote('ETH-USD');
-const jpy = await safeQuote('JPYUSD=X');
-const gbp = await safeQuote('GBPUSD=X');
-const chf = await safeQuote('CHFUSD=X');
-
 const data = {
-    eur: roundTo(eur.regularMarketPrice, 2),
-    silver: roundTo(silver.regularMarketPrice, 2),
-    platinum: roundTo(platinum.regularMarketPrice, 2),
-    gold: roundTo(gold.regularMarketPrice, 2),
-    btc: roundTo(btc.regularMarketPrice, 2),
-    eth: roundTo(eth.regularMarketPrice, 2),
-    jpy: roundTo(jpy.regularMarketPrice, 2),
-    gbp: roundTo(gbp.regularMarketPrice, 2),
-    chf: roundTo(chf.regularMarketPrice, 2),
-    btc: roundTo(btc.regularMarketPrice, 2),
+    eur: roundTo(priceMap['EURUSD=X'], 2),
+    silver: roundTo(priceMap['SI=F'], 2),
+    platinum: roundTo(priceMap['PL=F'], 2),
+    gold: roundTo(priceMap['GC=F'], 2),
+    btc: roundTo(priceMap['BTC-USD'], 2),
+    eth: roundTo(priceMap['ETH-USD'], 2),
+    jpy: roundTo(priceMap['JPYUSD=X'], 2),
+    gbp: roundTo(priceMap['GBPUSD=X'], 2),
+    chf: roundTo(priceMap['CHFUSD=X'], 2),
     created: new Date().toISOString()
 }
 

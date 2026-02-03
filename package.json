@@ -17,7 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "json2csv": "^5.0.6",
-    "yahoo-finance2": "^2.1.4"
+    "yahoo-finance2": "^3.13.0"
   },
   "dependencies": {
     "node-fetch": "^3.2.0"
