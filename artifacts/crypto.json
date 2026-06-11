@@ -7,8 +7,6 @@
     "quoteSourceName": "CoinMarketCap",
     "triggerable": true,
     "customPriceAlertConfidence": "HIGH",
-    "shortName": "Typerium USD",
-    "longName": "Typerium USD",
     "currency": "USD",
     "marketState": "REGULAR",
     "corporateActions": [],
@@ -20,6 +18,9 @@
     "gmtOffSetMilliseconds": 0,
     "market": "ccc_market",
     "esgPopulated": false,
+    "regularMarketPrice": 0.00009924408,
+    "shortName": "Typerium USD",
+    "longName": "Typerium USD",
     "fiftyDayAverage": 0.00010262,
     "fiftyDayAverageChange": -0.0000033759206,
     "fiftyDayAverageChangePercent": -0.032897297,
@@ -69,7 +70,6 @@
     "fiftyTwoWeekHigh": 0.000545,
     "fiftyTwoWeekChangePercent": -0.99999905,
     "regularMarketChangePercent": 0,
-    "regularMarketPrice": 0.00009924408,
     "symbol": "type"
   }
 ]
