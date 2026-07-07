@@ -8,6 +8,10 @@
     "triggerable": true,
     "customPriceAlertConfidence": "HIGH",
     "currency": "USD",
+    "longName": "Typerium USD",
+    "marketState": "REGULAR",
+    "corporateActions": [],
+    "regularMarketTime": "2023-11-30T18:14:00.000Z",
     "exchange": "CCC",
     "messageBoardId": "finmb_TYPE_CCC",
     "exchangeTimezoneName": "UTC",
@@ -17,9 +21,7 @@
     "esgPopulated": false,
     "regularMarketChangePercent": 0,
     "regularMarketPrice": 0.00009924408,
-    "marketState": "REGULAR",
     "shortName": "Typerium USD",
-    "longName": "Typerium USD",
     "hasPrePostMarketData": false,
     "firstTradeDateMilliseconds": "2018-10-25T00:00:00.000Z",
     "priceHint": 6,
@@ -68,8 +70,6 @@
     "exchangeDataDelayedBy": 0,
     "tradeable": false,
     "cryptoTradeable": false,
-    "corporateActions": [],
-    "regularMarketTime": "2023-11-30T18:14:00.000Z",
     "symbol": "type"
   }
 ]
