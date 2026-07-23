@@ -9,6 +9,7 @@
     "customPriceAlertConfidence": "HIGH",
     "currency": "USD",
     "shortName": "Typerium USD",
+    "longName": "Typerium USD",
     "hasPrePostMarketData": false,
     "firstTradeDateMilliseconds": "2018-10-25T00:00:00.000Z",
     "priceHint": 6,
@@ -46,7 +47,6 @@
     "fiftyTwoWeekLow": 0.000026,
     "fiftyTwoWeekHigh": 0.000545,
     "fiftyTwoWeekChangePercent": -0.99999905,
-    "marketState": "REGULAR",
     "fiftyDayAverage": 0.00010262,
     "fiftyDayAverageChange": -0.0000033759206,
     "fiftyDayAverageChangePercent": -0.032897297,
@@ -58,7 +58,6 @@
     "exchangeDataDelayedBy": 0,
     "tradeable": false,
     "cryptoTradeable": false,
-    "longName": "Typerium USD",
     "corporateActions": [],
     "regularMarketTime": "2023-11-30T18:14:00.000Z",
     "exchange": "CCC",
@@ -70,6 +69,7 @@
     "esgPopulated": false,
     "regularMarketChangePercent": 0,
     "regularMarketPrice": 0.00009924408,
+    "marketState": "REGULAR",
     "symbol": "type"
   }
 ]
