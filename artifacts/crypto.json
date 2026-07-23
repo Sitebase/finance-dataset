@@ -7,6 +7,8 @@
     "quoteSourceName": "CoinMarketCap",
     "triggerable": true,
     "customPriceAlertConfidence": "HIGH",
+    "shortName": "Typerium USD",
+    "longName": "Typerium USD",
     "hasPrePostMarketData": false,
     "firstTradeDateMilliseconds": "2018-10-25T00:00:00.000Z",
     "priceHint": 6,
@@ -17,6 +19,10 @@
     "fromCurrency": "TYPE",
     "toCurrency": "USD=X",
     "coinMarketCapLink": "https://coinmarketcap.com/currencies/typerium",
+    "currency": "USD",
+    "marketState": "REGULAR",
+    "corporateActions": [],
+    "regularMarketTime": "2023-11-30T18:14:00.000Z",
     "regularMarketChange": 0,
     "regularMarketDayHigh": 0.00009924408,
     "regularMarketDayRange": {
@@ -53,12 +59,8 @@
     "marketCap": 0,
     "sourceInterval": 15,
     "exchangeDataDelayedBy": 0,
-    "currency": "USD",
-    "marketState": "REGULAR",
-    "shortName": "Typerium USD",
-    "longName": "Typerium USD",
-    "corporateActions": [],
-    "regularMarketTime": "2023-11-30T18:14:00.000Z",
+    "tradeable": false,
+    "cryptoTradeable": false,
     "exchange": "CCC",
     "messageBoardId": "finmb_TYPE_CCC",
     "exchangeTimezoneName": "UTC",
@@ -68,8 +70,6 @@
     "esgPopulated": false,
     "regularMarketChangePercent": 0,
     "regularMarketPrice": 0.00009924408,
-    "tradeable": false,
-    "cryptoTradeable": false,
     "symbol": "type"
   }
 ]
