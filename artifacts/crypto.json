@@ -10,6 +10,7 @@
     "currency": "USD",
     "shortName": "Typerium USD",
     "longName": "Typerium USD",
+    "marketState": "REGULAR",
     "hasPrePostMarketData": false,
     "firstTradeDateMilliseconds": "2018-10-25T00:00:00.000Z",
     "priceHint": 6,
@@ -64,12 +65,11 @@
     "messageBoardId": "finmb_TYPE_CCC",
     "exchangeTimezoneName": "UTC",
     "exchangeTimezoneShortName": "UTC",
+    "gmtOffSetMilliseconds": 0,
     "market": "ccc_market",
+    "esgPopulated": false,
     "regularMarketChangePercent": 0,
     "regularMarketPrice": 0.00009924408,
-    "gmtOffSetMilliseconds": 0,
-    "esgPopulated": false,
-    "marketState": "REGULAR",
     "symbol": "type"
   }
 ]
