@@ -7,12 +7,14 @@
     "quoteSourceName": "CoinMarketCap",
     "triggerable": true,
     "customPriceAlertConfidence": "HIGH",
+    "regularMarketChangePercent": 0,
+    "regularMarketPrice": 0.00009924408,
     "currency": "USD",
-    "longName": "Typerium USD",
-    "shortName": "Typerium USD",
     "marketState": "REGULAR",
     "corporateActions": [],
     "regularMarketTime": "2023-11-30T18:14:00.000Z",
+    "shortName": "Typerium USD",
+    "longName": "Typerium USD",
     "exchange": "CCC",
     "messageBoardId": "finmb_TYPE_CCC",
     "exchangeTimezoneName": "UTC",
@@ -68,8 +70,6 @@
     "fiftyTwoWeekLow": 0.000026,
     "fiftyTwoWeekHigh": 0.000545,
     "fiftyTwoWeekChangePercent": -0.99999905,
-    "regularMarketChangePercent": 0,
-    "regularMarketPrice": 0.00009924408,
     "symbol": "type"
   }
 ]
