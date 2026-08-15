@@ -9,8 +9,6 @@
     "customPriceAlertConfidence": "HIGH",
     "currency": "USD",
     "marketState": "REGULAR",
-    "corporateActions": [],
-    "regularMarketTime": "2023-11-30T18:14:00.000Z",
     "exchange": "CCC",
     "messageBoardId": "finmb_TYPE_CCC",
     "exchangeTimezoneName": "UTC",
@@ -71,6 +69,8 @@
     "longName": "Typerium USD",
     "regularMarketChangePercent": 0,
     "regularMarketPrice": 0.00009924408,
+    "corporateActions": [],
+    "regularMarketTime": "2023-11-30T18:14:00.000Z",
     "symbol": "type"
   }
 ]
